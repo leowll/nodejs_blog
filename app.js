@@ -8,9 +8,11 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var settings = require('./settings');
-
+var flash = require('connect-flash');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+
+
 
 var app = express();
 
@@ -26,13 +28,27 @@ app.use(bodyParser.urlencoded({
 	extended : false
 }));
 
-app.use(cookieParser());
-
-
+//app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+	secret : settings.cookieSecret,
+	key : settings.db,
+	cookie : {
+		maxAge : 1000 * 60 * 60 * 24 * 30
+	},
+	store : new MongoStore({
+		db : settings.db,
+		host : settings.host,
+		port : settings.port
+	})
+}));
+app.use(flash());
 
 app.use('/', routes);
 app.use('/users', users);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -65,18 +81,6 @@ app.use(function(err, req, res, next) {
 	});
 });
 
-app.use(session({
-	secret : settings.cookieSecret,
-	key : settings.db,
-	cookie : {
-		maxAge : 1000 * 60 * 60 * 24 * 30
-	},
-	store : new MongoStore({
-		db : settings.db,
-		host : settings.host,
-		port : settings.port
-	})
-}));
 
 
 module.exports = app;
