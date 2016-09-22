@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="http://labfile.oss.aliyuncs.com/amazeui/2.2.1/css/amazeui.min.css">
-  </head>
-  <body>
-    <h1><%= title %></h1>
-  <%- include header %>
-    <div class="am-g">
-      <div class="am-u-lg-6 am-u-sm-centered">
-        <form method="post" class="am-form">
-          <label for="text">用户名：</label>
-          <input type="text" name="name">
-          <br>
-          <label for="password">密码:</label>
-          <input type="password" name="password">
-          <br>
-          <br />
-          <div class="am-cf">
-           <input type="submit" value="登录" class="am-btn am-btn-primary am-btn-sm am-fl">        
-          </div>
-        </form>   
-      </div>
-    </div>
-  </body>
+<head>
+<title><%= title %></title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='../stylesheets/font-awesome-4.6.3/css/font-awesome.min.css' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/css/amazeui.css" />
+
+<style>
+</style>
+</head>
+<body>
+
+	<%- include header %>
+
+	<div class="am-g">
+		<div class="am-u-lg-6 am-u-sm-centered">
+			<h1><%= title %></h1>
+			<form method="post" class="am-form">
+				<label for="text">用户名：</label> <input type="text" name="name"> <br> <label for="password">密码:</label> <input
+					type="password" name="password"> <br> <br />
+				<div class="am-cf">
+					<input type="submit" value="登录" class="am-btn am-btn-primary am-btn-sm am-fl">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
 </html>

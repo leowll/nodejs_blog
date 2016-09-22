@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= title %></title>
+<link rel="stylesheet" href="http://labfile.oss.aliyuncs.com/amazeui/2.2.1/css/amazeui.min.css">
+<link rel='stylesheet' href='../stylesheets/font-awesome-4.6.3/css/font-awesome.min.css' />
+
+</head>
+<body>
+	<%- include header %>
+	<div class="am-container" style="margin-top: 50px;">
+
+		<div class="am-g">
+			<div class="am-u-sm-6 am-u-sm-centered">
+				<% if (post){  %>
+				<article class="am-article">
+					<div class="am-article-hd">
+						<h1 class="am-article-title"><%=post.title %></h1>
+						<p class="am-article-meta"><%=post.name %></p>
+					</div>
+
+					<div class="am-article-bd">
+						<%=post.post %>
+					</div>
+				</article>
+				<%}else{ %>
+				<h1>Article not found!</h1>
+				<%} %>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

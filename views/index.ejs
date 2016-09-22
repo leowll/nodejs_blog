@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="http://labfile.oss.aliyuncs.com/amazeui/2.2.1/css/amazeui.min.css">
-  </head>
-  <body>
-  <%- include header %>
-  <%- include footer %>
-  	<br>
-  	<div>
-	    <% if (success) { %>
-	      <div><%= success %></div>
-	    <% } %>
-	    <% if (error) { %>
-	      <div><%= error %> </div>
-	    <% } %>
-    </div>
-  </body>
+<head>
+<title><%= title %></title>
+<link rel='stylesheet' href='../stylesheets/style.css' />
+<link rel='stylesheet' href='../stylesheets/font-awesome-4.6.3/css/font-awesome.min.css' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/css/amazeui.css" />
+
+</head>
+<body>
+	<%- include header %>
+
+	<div class="am-container" style="padding-top: 100px;">
+		<div class="am-u-lg-6 am-u-sm-centered">
+			<div>
+				<% if (success) { %>
+				<div><%= success %></div>
+				<% } %>
+				<% if (error) { %>
+				<div><%= error %></div>
+				<% } %>
+			</div>
+			<h1>Welcome to my nodejs blog!</h1>
+			<ul class="am-nav am-nav-justify">
+				<li><a href=""><span class="am-icon-github am-icon-lg" /><span>Github</a></li>
+				<li><a href=""><span class="am-icon-twitter am-icon-lg" /><span>Twitter</a></li>
+				<li><a href=""><span class="am-icon-facebook am-icon-lg" /><span>Facebook</a></li>
+			</ul>
+		</div>
+	</div>
+	<%- include footer %>
+</body>
 </html>
