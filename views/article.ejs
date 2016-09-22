@@ -2,13 +2,14 @@
 <html>
 <head>
 <title><%= title %></title>
-<link rel="stylesheet" href="http://labfile.oss.aliyuncs.com/amazeui/2.2.1/css/amazeui.min.css">
+<link rel='stylesheet' href='/stylesheets/style.css' />
 <link rel='stylesheet' href='../stylesheets/font-awesome-4.6.3/css/font-awesome.min.css' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/css/amazeui.css" />
 
 </head>
 <body>
 	<%- include header %>
-	<div class="am-container" style="margin-top: 50px;">
+	<div class="am-container" style="margin-top: 100px;">
 
 		<div class="am-g">
 			<div class="am-u-sm-6 am-u-sm-centered">
@@ -16,7 +17,9 @@
 				<article class="am-article">
 					<div class="am-article-hd">
 						<h1 class="am-article-title"><%=post.title %></h1>
-						<p class="am-article-meta"><%=post.name %></p>
+						<p class="am-article-meta"><%=post.name %>
+							| 日期：
+							<%=post.time.minute %></p>
 					</div>
 
 					<div class="am-article-bd">

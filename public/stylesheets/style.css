@@ -10,3 +10,7 @@ a {
 li a span span {
 	padding-left: 5px;
 }
+
+article .am-article-bd {
+	background-color: lightgray;
+}
